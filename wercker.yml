@@ -1,4 +1,3 @@
-box: nodesource/trusty
 dev:
   steps:
     - npm-install
@@ -8,6 +7,7 @@ dev:
 
 # Build definition
 build:
+box: nodesource/trusty
   # The steps that will be executed on build
   steps:
     - script:
@@ -21,4 +21,9 @@ build:
         code: |
           echo "node version $(node -v) running"
           echo "npm version $(npm -v) running"
-
+build:
+  box: golang
+  steps:
+    - script:
+      code: echo 'doing golang stuff!@'
+  
