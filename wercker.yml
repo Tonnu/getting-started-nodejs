@@ -1,4 +1,11 @@
 box: nodesource/trusty
+dev:
+  steps:
+    - script:
+      code: export NODE_ENV='testing'
+    - npm-install
+    - internal/watch:
+      code: node app.js
 build:
   steps:
     - script:
